@@ -1,8 +1,11 @@
 console.log("Weather App");
 
-var request= require('request');
+var geocode = require('./geocode/geocodeAddress');
 
-request('http://maps.googleapis.com/maps/api/geocode/json?address=%20OUG%20Parklane%20Pouchong%20Kuala%20Lumpur',(error,response,body)=>{
-console.log(body);
-});
+var weather = require('./weather/weather');
+
+geocode.geocodeAddress();
+
+weather.getWeather();
+
 
