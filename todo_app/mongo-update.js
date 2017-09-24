@@ -7,17 +7,20 @@ const {MongoClient, ObjectID} = require('mongodb');
 	}
 	console.log('Connect successfully established to db');
 
-	db.collection('Users').deleteOne({Name: 'Awais'}).then((result)=>{
+	db.collection('Users').findOneAndUpdate(
+	{ _id: new ObjectID('59c5f6d5fb7aca23ef47e826')},
+	{
+		$set :{
+			Age:27
+		}
+	},
+	{
+		returnOrignal:false
+	}).then((result)=>{
 	console.log(result);
 	});
 
-	//db.collection('Users').deleteMany({Name: 'Awais'}).then((result)=>{
-	//console.log(result);
-	//});
 
-	//db.collection('Users').findOneAndDelete({Name: 'Awais'}).then((result)=>{
-	//console.log(result);
-	//});
 
 	db.close();
 	});

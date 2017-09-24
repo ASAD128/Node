@@ -9,7 +9,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(error,db)=>{
 
 	db.collection('Users').insertOne({
 		Name:'Asad',
-		Ade:25,
+		Age:25,
 		Gender:'Male'
 		},(err,result)=>{
 		if(err)
