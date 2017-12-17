@@ -13,6 +13,7 @@ console.log("End Node App");
 //------------------function-------------------
 sum(2,3);
 function sum(a,b){
+
 var c=a+b;
 console.log("Sum of a and b = "+c);
 }
